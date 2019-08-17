@@ -5,6 +5,37 @@
 
 using namespace std;
 
+/* Face layout:
+ *      [   ]
+ *      [ 0 ]
+ *      [   ]
+ * [   ][   ][   ][   ]
+ * [ 4 ][ 1 ][ 2 ][ 3 ]
+ * [   ][   ][   ][   ]
+ *      [   ]
+ *      [ 5 ]
+ *      [   ]
+ *
+ *  0: Top (z+)
+ *  1: Front (x+)
+ *  2: Right (y+)
+ *  3: Back (x-)
+ *  4: Left (y-)
+ *  5: Bottom (z-)
+ *
+ * Face indexing:
+ *      [012]
+ *      [345]
+ *      [678]
+ * [012][012][012][012]
+ * [345][345][345][345]
+ * [678][678][678][678]
+ *      [012]
+ *      [345]
+ *      [678]
+ *
+ */
+
 Rubiks::Rubiks() : m_faces()
 {
     for (int face = 0; face < 6; face++)
@@ -126,7 +157,7 @@ void Rubiks::move(int type)
     }
     else if (type == 3)
     {
-        // Move front face clockwise
+        // Move front face counterclockwise
         rotateFace(m_faces[1], true);
         m_faces[0][6] = old_faces[4][8];
         m_faces[0][7] = old_faces[4][5];
