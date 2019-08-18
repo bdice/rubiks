@@ -72,6 +72,57 @@ void Rubiks::printFaces()
     }
 }
 
+void Rubiks::printCube()
+{
+    cout << "     [";
+    cout << m_faces[0][0] << m_faces[0][1] << m_faces[0][2];
+    cout << "]" << endl;
+    cout << "     [";
+    cout << m_faces[0][3] << m_faces[0][4] << m_faces[0][5];
+    cout << "]" << endl;
+    cout << "     [";
+    cout << m_faces[0][6] << m_faces[0][7] << m_faces[0][8];
+    cout << "]" << endl;
+
+    cout << "[";
+    cout << m_faces[4][0] << m_faces[4][1] << m_faces[4][2];
+    cout << "][";
+    cout << m_faces[1][0] << m_faces[1][1] << m_faces[1][2];
+    cout << "][";
+    cout << m_faces[2][0] << m_faces[2][1] << m_faces[2][2];
+    cout << "][";
+    cout << m_faces[3][0] << m_faces[3][1] << m_faces[3][2];
+    cout << "]" << endl;
+    cout << "[";
+    cout << m_faces[4][3] << m_faces[4][4] << m_faces[4][5];
+    cout << "][";
+    cout << m_faces[1][3] << m_faces[1][4] << m_faces[1][5];
+    cout << "][";
+    cout << m_faces[2][3] << m_faces[2][4] << m_faces[2][5];
+    cout << "][";
+    cout << m_faces[3][3] << m_faces[3][4] << m_faces[3][5];
+    cout << "]" << endl;
+    cout << "[";
+    cout << m_faces[4][6] << m_faces[4][7] << m_faces[4][8];
+    cout << "][";
+    cout << m_faces[1][6] << m_faces[1][7] << m_faces[1][8];
+    cout << "][";
+    cout << m_faces[2][6] << m_faces[2][7] << m_faces[2][8];
+    cout << "][";
+    cout << m_faces[3][6] << m_faces[3][7] << m_faces[3][8];
+    cout << "]" << endl;
+
+    cout << "     [";
+    cout << m_faces[5][0] << m_faces[5][1] << m_faces[5][2];
+    cout << "]" << endl;
+    cout << "     [";
+    cout << m_faces[5][3] << m_faces[5][4] << m_faces[5][5];
+    cout << "]" << endl;
+    cout << "     [";
+    cout << m_faces[5][6] << m_faces[5][7] << m_faces[5][8];
+    cout << "]" << endl;
+}
+
 void Rubiks::rotateFace(vector<int> &face, bool clockwise)
 {
     auto old_face = face;

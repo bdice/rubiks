@@ -7,6 +7,6 @@ int main()
 {
     auto cube = Rubiks();
     cube.move(0);
-    cube.printFaces();
+    cube.printCube();
     cout << "Done." << endl;
 }
