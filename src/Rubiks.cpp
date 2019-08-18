@@ -364,3 +364,12 @@ void Rubiks::move(int type)
         throw std::out_of_range("Invalid move number.");
     }
 }
+
+int Rubiks::reverseMove(int type)
+{
+    bool clockwise = (type % 2 == 0);
+    if (clockwise)
+        return type + 1;
+    else
+        return type - 1;
+}

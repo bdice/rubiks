@@ -10,6 +10,7 @@ class Rubiks
         void printCube();
         void rotateFace(vector<int> &face, bool clockwise);
         void move(int type);
+        static int reverseMove(int type);
 
     private:
         vector<vector<int>> m_faces;
