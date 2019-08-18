@@ -38,12 +38,12 @@ using namespace std;
 
 Rubiks::Rubiks() : m_faces()
 {
-    for (int face = 0; face < 6; face++)
+    for (int face_index = 0; face_index < 6; face_index++)
         {
         vector<int> face_colors;
         for (int square = 0; square < 9; square++)
         {
-            face_colors.push_back(face);
+            face_colors.push_back(face_index);
         }
         m_faces.push_back(face_colors);
         }
@@ -363,6 +363,22 @@ void Rubiks::move(int type)
     {
         throw std::out_of_range("Invalid move number.");
     }
+}
+
+double Rubiks::fractionCorrect()
+{
+    double correct = 0;
+    double total = 0;
+    for (int face_index = 0; face_index < m_faces.size(); face_index++)
+    {
+        for (auto square : m_faces[face_index])
+        {
+            if (square == face_index)
+                correct++;
+            total++;
+        }
+    }
+    return correct/total;
 }
 
 int Rubiks::reverseMove(int type)
