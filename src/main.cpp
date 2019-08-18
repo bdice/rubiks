@@ -17,6 +17,7 @@ int main()
         cube.move(move);
     }
 
+    cout << "Scrambled cube:" << endl;
     cube.printCube();
 
     for (auto it = move_history.rbegin(); it != move_history.rend(); it++)
@@ -24,6 +25,7 @@ int main()
         cube.move(Rubiks::reverseMove(*it));
     }
 
+    cout << "Unscrambled cube:" << endl;
     cube.printCube();
     cout << "Done." << endl;
 }
