@@ -49,6 +49,10 @@ Rubiks::Rubiks() : m_faces()
         }
 }
 
+Rubiks::Rubiks(vector<vector<int>> faces) : m_faces(faces)
+{
+}
+
 void Rubiks::printFaces()
 {
     for (int face_index = 0; face_index < m_faces.size(); face_index++)
