@@ -22,6 +22,7 @@ int main()
 
     cout << "Scrambled cube:" << endl;
     cube.printCube();
+    cout << "Fraction correct: " << cube.fractionCorrect() << endl;
 
     for (auto it = move_history.rbegin(); it != move_history.rend(); it++)
     {
@@ -30,5 +31,5 @@ int main()
 
     cout << "Unscrambled cube:" << endl;
     cube.printCube();
-    cout << "Done." << endl;
+    cout << "Fraction correct: " << cube.fractionCorrect() << endl;
 }
