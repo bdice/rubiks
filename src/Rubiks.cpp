@@ -259,40 +259,6 @@ void Rubiks::move(int type)
     }
     else if (type == 6)
     {
-        // Move bottom face clockwise
-        rotateFace(m_faces[5], true);
-        m_faces[1][6] = old_faces[4][6];
-        m_faces[1][7] = old_faces[4][7];
-        m_faces[1][8] = old_faces[4][8];
-        m_faces[2][6] = old_faces[1][6];
-        m_faces[2][7] = old_faces[1][7];
-        m_faces[2][8] = old_faces[1][8];
-        m_faces[3][6] = old_faces[2][6];
-        m_faces[3][7] = old_faces[2][7];
-        m_faces[3][8] = old_faces[2][8];
-        m_faces[4][6] = old_faces[3][6];
-        m_faces[4][7] = old_faces[3][7];
-        m_faces[4][8] = old_faces[3][8];
-    }
-    else if (type == 7)
-    {
-        // Move bottom face counterclockwise
-        rotateFace(m_faces[5], false);
-        m_faces[1][6] = old_faces[2][6];
-        m_faces[1][7] = old_faces[2][7];
-        m_faces[1][8] = old_faces[2][8];
-        m_faces[2][6] = old_faces[3][6];
-        m_faces[2][7] = old_faces[3][7];
-        m_faces[2][8] = old_faces[3][8];
-        m_faces[3][6] = old_faces[4][6];
-        m_faces[3][7] = old_faces[4][7];
-        m_faces[3][8] = old_faces[4][8];
-        m_faces[4][6] = old_faces[1][6];
-        m_faces[4][7] = old_faces[1][7];
-        m_faces[4][8] = old_faces[1][8];
-    }
-    else if (type == 8)
-    {
         // Move back face clockwise
         rotateFace(m_faces[3], true);
         m_faces[0][0] = old_faces[2][2];
@@ -308,7 +274,7 @@ void Rubiks::move(int type)
         m_faces[4][3] = old_faces[0][1];
         m_faces[4][6] = old_faces[0][0];
     }
-    else if (type == 9)
+    else if (type == 7)
     {
         // Move back face counterclockwise
         rotateFace(m_faces[3], false);
@@ -325,7 +291,7 @@ void Rubiks::move(int type)
         m_faces[0][1] = old_faces[4][3];
         m_faces[0][0] = old_faces[4][6];
     }
-    else if (type == 10)
+    else if (type == 8)
     {
         // Move left face clockwise
         rotateFace(m_faces[4], true);
@@ -342,7 +308,7 @@ void Rubiks::move(int type)
         m_faces[3][5] = old_faces[5][3];
         m_faces[3][8] = old_faces[5][0];
     }
-    else if (type == 11)
+    else if (type == 9)
     {
         // Move left face counterclockwise
         rotateFace(m_faces[4], false);
@@ -358,6 +324,40 @@ void Rubiks::move(int type)
         m_faces[5][6] = old_faces[3][2];
         m_faces[5][3] = old_faces[3][5];
         m_faces[5][0] = old_faces[3][8];
+    }
+    else if (type == 10)
+    {
+        // Move bottom face clockwise
+        rotateFace(m_faces[5], true);
+        m_faces[1][6] = old_faces[4][6];
+        m_faces[1][7] = old_faces[4][7];
+        m_faces[1][8] = old_faces[4][8];
+        m_faces[2][6] = old_faces[1][6];
+        m_faces[2][7] = old_faces[1][7];
+        m_faces[2][8] = old_faces[1][8];
+        m_faces[3][6] = old_faces[2][6];
+        m_faces[3][7] = old_faces[2][7];
+        m_faces[3][8] = old_faces[2][8];
+        m_faces[4][6] = old_faces[3][6];
+        m_faces[4][7] = old_faces[3][7];
+        m_faces[4][8] = old_faces[3][8];
+    }
+    else if (type == 11)
+    {
+        // Move bottom face counterclockwise
+        rotateFace(m_faces[5], false);
+        m_faces[1][6] = old_faces[2][6];
+        m_faces[1][7] = old_faces[2][7];
+        m_faces[1][8] = old_faces[2][8];
+        m_faces[2][6] = old_faces[3][6];
+        m_faces[2][7] = old_faces[3][7];
+        m_faces[2][8] = old_faces[3][8];
+        m_faces[3][6] = old_faces[4][6];
+        m_faces[3][7] = old_faces[4][7];
+        m_faces[3][8] = old_faces[4][8];
+        m_faces[4][6] = old_faces[1][6];
+        m_faces[4][7] = old_faces[1][7];
+        m_faces[4][8] = old_faces[1][8];
     }
     else
     {
